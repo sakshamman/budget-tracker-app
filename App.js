@@ -1,6 +1,13 @@
-import React from "react";
-import StackNavigator from "./navigation/StackNavigator";
-
-export default function App() {
-  return <StackNavigator />;
-}
+<Stack.Navigator>
+  {!auth.currentUser ? (
+    <>
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Register" component={RegisterScreen} />
+    </>
+  ) : (
+    <>
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Add" component={BudgetEntryScreen} />
+    </>
+  )}
+</Stack.Navigator>;

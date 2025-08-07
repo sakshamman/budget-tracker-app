@@ -1,17 +1,19 @@
-// Import the functions you need from the SDKs you need
+// firebaseConfig.js
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyB_28wb6tQTSdw5DtoFNaoKqlj9Q5mvHtA",
-  authDomain: "budget-tracker-c8232.firebaseapp.com",
-  projectId: "budget-tracker-c8232",
-  storageBucket: "budget-tracker-c8232.firebasestorage.app",
-  messagingSenderId: "1021880927516",
-  appId: "1:1021880927516:web:70b53306e6fb42e9f9a6d9",
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_PROJECT.firebaseapp.com",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_PROJECT.appspot.com",
+  messagingSenderId: "YOUR_SENDER_ID",
+  appId: "YOUR_APP_ID",
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+export { auth, db };
